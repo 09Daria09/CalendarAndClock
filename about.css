@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+img {
+    filter: hue-rotate(260deg) saturate(400%) brightness(160%);
+  }
+  
+  .clock-img {
+    margin-right: 15px; 
+}
+
+.points {
+    margin-right: 5px; 
+}

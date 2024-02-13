@@ -41,4 +41,28 @@ setInterval(blinkPoints, 2000);
 
 window.onload = updateClock;
 
+function getRandomChar() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    return chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  
+  function createChar() {
+    const charElement = document.createElement('div');
+    charElement.classList.add('char');
+    charElement.textContent = getRandomChar();
+    charElement.style.left = Math.random() * window.innerWidth + 'px';
+    charElement.style.animationDuration = Math.random() * 3 + 2 + 's'; 
+    charElement.style.opacity = Math.random(); 
+    document.body.appendChild(charElement);
+  
+    setTimeout(() => {
+      document.body.removeChild(charElement);
+    }, charElement.style.animationDuration.slice(0, -1) * 1000); 
+  }
+  
+  function startRain() {
+    setInterval(createChar, 10);
+  }
+  
+  window.onload = startRain;
   
